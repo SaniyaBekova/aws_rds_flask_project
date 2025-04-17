@@ -29,7 +29,7 @@ def health():
         conn.close()
         return jsonify({'status':'healthy'}), 200
     except Exception as e:
-        return jsonify({'status:':'unthealthy'}), 500
+        return jsonify({'status:':'unthealthy', 'error': str(e)}), 500
     
 if __name__ == '__main__':
     app.run(host = '0.0.0.0', port = 5000)
